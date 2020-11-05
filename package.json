@@ -2,7 +2,7 @@
   "name": "react_tic_tac_toe",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://AlvifSandana.github.io/tic-tac-toe/",
+  "homepage": "https://alvifsandana.github.io/tic-tac-toe/",
   "dependencies": {
     "papercss": "^1.8.1",
     "react": "^16.14.0",
