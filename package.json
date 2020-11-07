@@ -4,6 +4,9 @@
   "private": false,
   "homepage": "https://alvifsandana.github.io/tic-tac-toe/",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "papercss": "^1.8.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

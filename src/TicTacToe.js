@@ -14,6 +14,9 @@ import { getRandomInt, switchPlayer } from "./utils";
 import { minimax } from "./minimax";
 import { ResultModal } from "./ResultModal";
 import { border } from "./styles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBiking } from '@fortawesome/free-solid-svg-icons';
+import { faAtom } from '@fortawesome/free-solid-svg-icons';
 
 const arr = new Array(DIMS ** 2).fill(null);
 const board = new Board();
@@ -36,14 +39,14 @@ const TicTacToe = ({ squares = arr }) => {
       let winnerStr;
       switch (winner) {
         case PLAYER_X:
-          winnerStr = "Player X wins!";
+          winnerStr = <div>Player <FontAwesomeIcon icon={faBiking}/> win!!</div>;
           break;
         case PLAYER_O:
-          winnerStr = "Player O wins!";
+          winnerStr = <div>Player <FontAwesomeIcon icon={faAtom}/> win!!</div>;
           break;
         case DRAW:
         default:
-          winnerStr = "It's a draw";
+          winnerStr = "draw :(";
       }
       setGameState(GAME_STATES.over);
       setWinner(winnerStr);
@@ -173,9 +176,9 @@ const TicTacToe = ({ squares = arr }) => {
       <Inner>
         <ChooseText>Choose your player</ChooseText>
         <ButtonRow>
-          <button onClick={() => choosePlayer(PLAYER_X)}>X</button>
+          <button  onClick={() => choosePlayer(PLAYER_X)}><FontAwesomeIcon icon={faBiking}/></button>
           <p>or</p>
-          <button onClick={() => choosePlayer(PLAYER_O)}>O</button>
+          <button onClick={() => choosePlayer(PLAYER_O)}><FontAwesomeIcon icon={faAtom}/></button>
         </ButtonRow>
       </Inner>
     </Screen>
@@ -190,7 +193,7 @@ const TicTacToe = ({ squares = arr }) => {
             key={index}
             onClick={() => humanMove(index)}
           >
-            {isActive && <Marker>{value === PLAYER_X ? "X" : "O"}</Marker>}
+            {isActive && <Marker>{value === PLAYER_X ? <FontAwesomeIcon icon={faBiking}/> : <FontAwesomeIcon icon={faAtom}/>}</Marker>}
           </Square>
         );
       })}
